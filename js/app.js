@@ -10,28 +10,63 @@ function generateArray() {
 }
 
 
+// let array = generateArray();
+// let colorsArray = generateColorsArray();
+// //Bubble sort
+// async function bubbleSort(array) {
+//     let sortedArray = [...array];
+//     let temp;
+//     for (let i = 0; i < sortedArray.length; i++) {
+//         for (let j = 0; j < sortedArray.length - 1; j++) {
+//             if (sortedArray[j] > sortedArray[j + 1]) {
+//                 temp = sortedArray[j];
+//                 sortedArray[j] = sortedArray[j + 1];
+//                 sortedArray[j + 1] = temp;
+//                 //console.log(sortedArray);
+//                 //delay
+//                 await new Promise(resolve => setTimeout(resolve, 500))
+//                     .then(updateChart(sortedArray, 'bubble sort'));
+//             }
+//         }
+//     }
+//     return sortedArray;
+// }
+
 let array = generateArray();
-let colorsArray = generateColorsArray();
-//Bubble sort
-async function bubbleSort(array) {
+async function mergeSort(array){
+let colorArray = generateColorsArray();
+
     let sortedArray = [...array];
-    let temp;
-    for (let i = 0; i < sortedArray.length; i++) {
-        for (let j = 0; j < sortedArray.length - 1; j++) {
-            if (sortedArray[j] > sortedArray[j + 1]) {
-                temp = sortedArray[j];
-                sortedArray[j] = sortedArray[j + 1];
-                sortedArray[j + 1] = temp;
-                //console.log(sortedArray);
-                //delay
-                await new Promise(resolve => setTimeout(resolve, 500))
-                    .then(updateChart(sortedArray, 'bubble sort'));
-            }
+    let temp = 0;
+
+    let left = Math.floor(array.length/2);
+    let rightArr = array.slice(left)
+    let leftArr = array.slice(0, left);
+    if ()
+    for (let i = 0; i < leftArr.length; i++){
+        if (leftArr.length === 2){
+         temp = leftArr[i]
+         leftArr[i] > leftArr[i + 1];
+         leftArr[i + 1] = temp;
+        } 
+    }
+    for (let j = 0; j < rightArr.length; j++){
+        if (rightArr.length === 2){
+            temp = rightArr[i]
+            rightArr[i] > rightArr[i + 1];
+            rightArr[i + 1] = temp;
         }
     }
-    return sortedArray;
+    
+    mergeSort(array);
+    
 }
-bubbleSort(array);
+// console.log(array);
+// console.log(leftArr);
+// console.log(rightArr);
+
+
+
 var colors = generateColorsArray();
 //updateChart(array, 'bubble sort');
 function updateChart(array, chartLabel) {
